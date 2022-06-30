@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: #8ac3f5 !important;
+}
+/* .text {
+    text-align: center;
+    margin-bottom: 300px;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    display: block;
+}
+
+div {
+    height: 400px;
+} */
+
+.important::after {
+    content: "*";
+    color: red;
+    top: -6px;
+    font-size: 30px;
+    position: absolute;
+    
+
+}
+
+.important {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
