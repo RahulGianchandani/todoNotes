@@ -115,21 +115,10 @@ searchBtn.addEventListener("click", (e) => {
 
 const deleteNote = (index) => {
   impCards = cards[index].classList.contains("important");
-  if (impCards)
+ 
     
  
-    if (confirm("Are you sure to delete important note?!") == true) {
-      let notes = localStorage.getItem("notes");
-      console.log(notes);
-      notes == null ? (notesArr = []) : (notesArr = JSON.parse(notes));
-      console.log(cards);
-      notesArr.splice(index, 1);
-      console.log(notesArr);
-      localStorage.setItem("notes", JSON.stringify(notesArr));
-      createNote();
-    }
-  
-  else {
+
     let notes = localStorage.getItem("notes");
     console.log(notes);
     notes == null ? (notesArr = []) : (notesArr = JSON.parse(notes));
@@ -138,13 +127,13 @@ const deleteNote = (index) => {
     console.log(notesArr);
     localStorage.setItem("notes", JSON.stringify(notesArr));
     createNote();
-  }
+  
 };
 
 // Update / edit textNote
 const updateNote = (index) => {
   let cardTitle = document.getElementsByTagName("h5")[index];
-  let cardTxt = document.getElementsByTagName("p")[index];
+  let cardTxt = document.getElementsByClassName("card-text")[index];
   cardTitle.classList.add(
     "shadow-lg",
     "p-2",
@@ -168,7 +157,7 @@ const updateNote = (index) => {
   cardTitle.setAttribute("contenteditable", true);
 
   console.log(cardTxt.textContent);
-  console.log(cardTitle);
+  console.log(cardTitle.textContent);
 
   // adding blur event to edit
   saveEdit = () => {
