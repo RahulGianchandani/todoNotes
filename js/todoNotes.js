@@ -100,7 +100,7 @@ searchBtn.addEventListener("click", (e) => {
   cards = [...cards]; //converting cards html collection to an Array
 
   cards.forEach((element, index) => {
-    let cardTxt = document.getElementsByTagName("p")[index].innerHTML;
+    let cardTxt = document.getElementsByClassName("card-text")[index].innerHTML;
 
     console.log(cardTxt.toLowerCase());
     cardTxt.includes(
@@ -115,19 +115,15 @@ searchBtn.addEventListener("click", (e) => {
 
 const deleteNote = (index) => {
   impCards = cards[index].classList.contains("important");
- 
-    
- 
 
-    let notes = localStorage.getItem("notes");
-    console.log(notes);
-    notes == null ? (notesArr = []) : (notesArr = JSON.parse(notes));
-    console.log(cards);
-    notesArr.splice(index, 1);
-    console.log(notesArr);
-    localStorage.setItem("notes", JSON.stringify(notesArr));
-    createNote();
-  
+  let notes = localStorage.getItem("notes");
+  console.log(notes);
+  notes == null ? (notesArr = []) : (notesArr = JSON.parse(notes));
+  console.log(cards);
+  notesArr.splice(index, 1);
+  console.log(notesArr);
+  localStorage.setItem("notes", JSON.stringify(notesArr));
+  createNote();
 };
 
 // Update / edit textNote
